@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.naming.Name;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -28,4 +29,8 @@ public class MealLogs {
     @Enumerated(EnumType.STRING)
     private MealType mealType;
     private LocalDateTime logged_at;
+
+    @OneToMany
+    @JoinColumn(name = "food_item_id")
+    private List<FoodItems> foodItems;
 }
