@@ -18,9 +18,9 @@ public class WorkoutSet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "workout_set_id")
-    private List<Workout> workouts;
+    private Workout workouts;
 
     @Column(nullable = false)
     private long setCount;

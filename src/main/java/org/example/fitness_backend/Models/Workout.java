@@ -20,9 +20,9 @@ public class Workout {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private List<User> users;
+    private User users;
 
     @Column(nullable = false)
     private LocalTime startedAt;
